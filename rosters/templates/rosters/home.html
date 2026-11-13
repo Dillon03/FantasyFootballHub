@@ -1,13 +1,38 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FantasyFootballHub</title>
 </head>
 <body>
-    <h1>Welcome to FantasyFootballHub</h1>
-    <p>Manage your fantasy football team and organize your roster.</p>
-    <p>Build your team, add players, and manage your starting lineup.</p>
+    <h1>FantasyFootballHub</h1>
+    <p>Manage your fantasy football teams and players.</p>
+
+    <h2>My Teams</h2>
+
+    {% for team in teams %}
+        <h3>{{ team.name }}</h3>
+
+        <p>Players: {{ team.players.count }}</p>
+
+        <h4>Current Roster</h4>
+        <ul>
+            {% for player in team.players.all %}
+                <li>
+                    {{ player.name }} -
+                    {{ player.position }} -
+                    {% if player.is_starter %}
+                        Starter
+                    {% else %}
+                        Bench
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>No players added yet.</li>
+            {% endfor %}
+        </ul>
+    {% empty %}
+        <p>No fantasy teams created yet.</p>
+    {% endfor %}
 </body>
 </html>
