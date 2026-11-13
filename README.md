@@ -33,6 +33,15 @@ The goal of FantasyFootballHub is to provide a straightforward way for users to 
    venv\Scripts\python.exe manage.py migrate
    ```
 
+6. Create a user account:
+   ```bash
+   venv\Scripts\python.exe manage.py createsuperuser
+   ```
+   Follow the prompts to create a username and password.
+
+## Getting Started
+
+
 ## Getting Started
 
 1. Start the Django development server:
@@ -43,4 +52,22 @@ The goal of FantasyFootballHub is to provide a straightforward way for users to 
 2. Open a browser and visit:
    http://127.0.0.1:8000/
 
-3. The FantasyFootballHub homepage will appear.
+3. Log in using the account created during installation.
+
+4. Click **Create Team** to create a fantasy football team.
+
+5. Click **Add Player** to add players to your team.
+
+6. Select **Manage Roster** to view your players.
+
+7. Use the **Edit** and **Remove** options to update your roster.
+
+8. Players can be assigned as starters or bench players.
+
+9. Click **Logout** when finished.
+
+Each user can only view and manage their own fantasy teams and players.
+
+## License
+
+No license has been assigned to FantasyFootballHub.
