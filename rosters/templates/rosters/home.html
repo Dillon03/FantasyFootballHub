@@ -5,9 +5,17 @@
 </head>
 <body>
     <h1>FantasyFootballHub</h1>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
     <p>Manage your fantasy football teams and players.</p>
 
     <h2>My Teams</h2>
+    
+    <p><a href="{% url 'create_team' %}">Create Team</a></p>
     <p><a href="{% url 'add_player' %}">Add Player</a></p>
 
     {% for team in teams %}
