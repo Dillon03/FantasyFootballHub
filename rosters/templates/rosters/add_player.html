@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Player - FantasyFootballHub</title>
+</head>
+<body>
+    <h1>FantasyFootballHub</h1>
+    <h2>Add Player</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Save Player</button>
+    </form>
+
+    <p>
+        <a href="{% url 'home' %}">Cancel</a>
+    </p>
+</body>
+</html>

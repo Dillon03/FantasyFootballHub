@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Player - FantasyFootballHub</title>
+</head>
+<body>
+    <h1>FantasyFootballHub</h1>
+    <h2>Remove Player</h2>
+
+    <p>Are you sure you want to remove {{ player.name }}?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Remove Player</button>
+    </form>
+
+    <p>
+        <a href="{% url 'manage_roster' player.team.id %}">
+            Cancel
+        </a>
+    </p>
+</body>
+</html>

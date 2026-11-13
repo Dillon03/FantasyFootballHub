@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +8,13 @@
     <p>Manage your fantasy football teams and players.</p>
 
     <h2>My Teams</h2>
+    <p><a href="{% url 'add_player' %}">Add Player</a></p>
 
     {% for team in teams %}
         <h3>{{ team.name }}</h3>
+        <p>
+    <a href="{% url 'manage_roster' team.id %}">Manage Roster</a>
+</p>
 
         <p>Players: {{ team.players.count }}</p>
 

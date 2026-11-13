@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Roster - FantasyFootballHub</title>
+</head>
+<body>
+    <h1>FantasyFootballHub</h1>
+    <h2>Manage Roster</h2>
+
+    <h3>Team: {{ team.name }}</h3>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Player</th>
+            <th>Position</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for player in team.players.all %}
+        <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.get_position_display }}</td>
+            <td>
+                {% if player.is_starter %}
+                    Starter
+                {% else %}
+                    Bench
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'edit_player' player.id %}">Edit</a> |
+                <a href="{% url 'remove_player' player.id %}">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        <a href="{% url 'add_player' %}">Add Player</a>
+    </p>
+
+    <p>
+        <a href="{% url 'home' %}">Back to Dashboard</a>
+    </p>
+</body>
+</html>

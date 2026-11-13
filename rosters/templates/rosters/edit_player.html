@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Player - FantasyFootballHub</title>
+</head>
+<body>
+    <h1>FantasyFootballHub</h1>
+    <h2>Edit Player</h2>
+
+    <h3>{{ player.name }}</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <p>
+        <a href="{% url 'manage_roster' player.team.id %}">
+            Cancel
+        </a>
+    </p>
+</body>
+</html>
