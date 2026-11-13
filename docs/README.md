@@ -86,3 +86,14 @@ As an **attacker**, I want to **insert harmful content into team or player names
 **Mitigation Criteria:**
 - Input fields have length limits.
 - User input is escaped when displayed.
+
+## Interface Mockups
+
+### Team Dashboard
+![Team Dashboard](dashboardexample.png)
+
+### Manage Roster
+![Manage Roster](managerosterexample.png)
+
+### Add Player
+![Add Player](addplayerexample.png)
